@@ -1,0 +1,20 @@
+{{ with .Params.certifications }}
+<section id="certifications" class="mb-8 scroll-mt-5">
+  <h2 class="text-xl font-semibold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">
+    Certifications
+  </h2>
+  <div class="columns-2 gap-4">
+    {{ range . }}
+    <div class="bg-white dark:bg-gray-800 dark:border-gray-700 border rounded p-3 mb-4 break-inside-avoid">
+      <div class="flex justify-between items-start">
+        <h3 class="font-medium text-sm dark:text-white">{{ .name }}</h3>
+        <span class="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap ml-2">{{ .year }}</span>
+      </div>
+      <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">
+        {{ .issuer }}{{ with .credentialURL }} - <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Verify Credential</a>{{ end }}
+      </p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300 scroll-smooth">
+  {{ partial "head.html" . }}
+  <body id="top">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+      <article class="max-w-2xl mx-auto">
+
+        <a href="{{ "/blog/" | relURL }}" class="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:underline mb-6">
+          &larr; Back to all posts
+        </a>
+
+        <header class="border-b border-gray-200 dark:border-gray-700 pb-4 mb-6">
+          <h1 class="text-2xl font-semibold text-gray-900 dark:text-white leading-tight mb-2">{{ .Title }}</h1>
+          <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+            {{ if not .Date.IsZero }}
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ end }}
+            {{ if .Params.author }}
+              <span>&middot; {{ .Params.author }}</span>
+            {{ end }}
+            <span>&middot; {{ .ReadingTime }} min read</span>
+          </div>
+          {{ with .Params.tags }}
+            <div class="flex flex-wrap gap-2 mt-3">
+              {{ range . }}
+                <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </header>
+
+        {{/* If @tailwindcss/typography is installed, swap this div's class for:
+             "prose dark:prose-invert max-w-none" */}}
+        <div class="text-sm leading-relaxed text-gray-700 dark:text-gray-300 space-y-4
+                    [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:text-gray-900 [&_h2]:dark:text-white [&_h2]:mt-8 [&_h2]:mb-2
+                    [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-gray-900 [&_h3]:dark:text-white [&_h3]:mt-6 [&_h3]:mb-2
+                    [&_a]:text-blue-600 [&_a]:dark:text-blue-400 [&_a]:underline
+                    [&_ul]:list-disc [&_ul]:list-inside [&_ol]:list-decimal [&_ol]:list-inside
+                    [&_p_code]:bg-gray-100 [&_p_code]:dark:bg-gray-700 [&_p_code]:px-1.5 [&_p_code]:py-0.5 [&_p_code]:rounded [&_p_code]:text-xs
+                    [&_li_code]:bg-gray-100 [&_li_code]:dark:bg-gray-700 [&_li_code]:px-1.5 [&_li_code]:py-0.5 [&_li_code]:rounded [&_li_code]:text-xs
+                    [&_blockquote]:border-l-4 [&_blockquote]:border-gray-300 [&_blockquote]:dark:border-gray-600 [&_blockquote]:pl-4 [&_blockquote]:italic
+                    [&_img]:rounded-lg [&_img]:my-4">
+          {{ .Content }}
+        </div>
+
+        <div class="mt-10 pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between text-sm">
+          {{ with .PrevInSection }}
+            <a href="{{ .RelPermalink }}" class="text-gray-600 dark:text-gray-400 hover:underline">&larr; {{ .Title }}</a>
+          {{ else }}
+            <span></span>
+          {{ end }}
+          {{ with .NextInSection }}
+            <a href="{{ .RelPermalink }}" class="text-gray-600 dark:text-gray-400 hover:underline">{{ .Title }} &rarr;</a>
+          {{ end }}
+        </div>
+
+      </article>
+    </div>
+  </body>
+</html>

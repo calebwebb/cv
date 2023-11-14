@@ -1,0 +1,44 @@
+{{/*
+  Latest Posts section for the homepage.
+  Matches the same card/heading conventions as skills.html / projects.html
+  (bg-white dark:bg-gray-800, border-gray-200 dark:border-gray-700, etc).
+
+  Drop this call into layouts/index.html next to your other partial calls:
+    {{ partial "blog.html" . }}
+
+  Pulls real posts from content/blog/ - nothing to add to content/_index.md.
+*/}}
+
+{{ $blogSection := site.GetPage "blog" }}
+{{ if $blogSection }}
+  {{ $posts := $blogSection.Pages.ByDate.Reverse }}
+  {{ if gt (len $posts) 0 }}
+    <section id="blog" class="mb-8 scroll-mt-5">
+      <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-2 mb-4">
+        <h2 class="text-xl font-semibold dark:text-white">Blog</h2>
+        <a href="{{ $blogSection.RelPermalink }}" class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">
+          View all &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        {{ range first 4 $posts }}
+          <a href="{{ .RelPermalink }}"
+             class="bg-white dark:bg-gray-800 dark:border-gray-700 border rounded-lg p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+            <div>
+              <h4 class="font-semibold text-base mb-1 text-gray-900 dark:text-white">{{ .Title }}</h4>
+              {{ if not .Date.IsZero }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}" class="text-xs text-gray-500 dark:text-gray-400">
+                  {{ .Date.Format "Jan 2, 2006" }}
+                </time>
+              {{ end }}
+              <p class="text-gray-700 dark:text-gray-300 mt-2">
+                {{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+              </p>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
