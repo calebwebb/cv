@@ -32,7 +32,6 @@ enableRobotsTXT = true
 # NAVIGATION MENU
 # ==============================================================================
 # Anchor links match NightFolio's modular home page sections in content/_index.md
-[menu]
   [[menu.main]]
     name = "About"
     url = "/#summary"

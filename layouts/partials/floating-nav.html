@@ -1,0 +1,131 @@
+<nav class="hidden lg:block fixed right-6 top-1/2 -translate-y-1/2 z-50" aria-label="Quick nav">
+  <ul id="nav-container" class="relative flex flex-col gap-1.5 p-1.5 bg-white/70 dark:bg-neutral-950/70 backdrop-blur-md border border-neutral-200/80 dark:border-neutral-800/80 rounded-full shadow-lg dark:shadow-2xl transition-colors duration-200">
+    
+    <!-- Dynamic Sliding Bubble Indicator -->
+    <div id="nav-indicator" 
+         class="absolute left-1.5 right-1.5 bg-neutral-200/80 dark:bg-neutral-800/90 rounded-full shadow-sm transition-all duration-300 pointer-events-none opacity-0">
+    </div>
+
+    <!-- About Section -->
+    <li>
+      <a href="{{ site.Home.RelPermalink }}#summary" data-section="summary" class="nav-link group relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-neutral-600 dark:text-neutral-400 transition-colors duration-200">
+        <i class="fa-solid fa-user text-[11px]"></i>
+        <span class="absolute right-12 px-3 py-1.5 text-xs font-normal capitalize text-neutral-800 dark:text-neutral-200 bg-white/95 dark:bg-neutral-900/90 backdrop-blur-sm border border-neutral-200/80 dark:border-neutral-800/80 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md dark:shadow-xl">
+          About
+        </span>
+      </a>
+    </li>
+
+    <!-- Experience Section -->
+    <li>
+      <a href="{{ site.Home.RelPermalink }}#experience" data-section="experience" class="nav-link group relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-neutral-600 dark:text-neutral-400 transition-colors duration-200">
+        <i class="fa-solid fa-briefcase text-[11px]"></i>
+        <span class="absolute right-12 px-3 py-1.5 text-xs font-normal capitalize text-neutral-800 dark:text-neutral-200 bg-white/95 dark:bg-neutral-900/90 backdrop-blur-sm border border-neutral-200/80 dark:border-neutral-800/80 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md dark:shadow-xl">
+          Experience
+        </span>
+      </a>
+    </li>
+
+    <!-- Certifications Section -->
+    <li>
+      <a href="{{ site.Home.RelPermalink }}#certifications" data-section="certifications" class="nav-link group relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-neutral-600 dark:text-neutral-400 transition-colors duration-200">
+        <i class="fa-solid fa-certificate text-[11px]"></i>
+        <span class="absolute right-12 px-3 py-1.5 text-xs font-normal capitalize text-neutral-800 dark:text-neutral-200 bg-white/95 dark:bg-neutral-900/90 backdrop-blur-sm border border-neutral-200/80 dark:border-neutral-800/80 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md dark:shadow-xl">
+          Certifications
+        </span>
+      </a>
+    </li>
+
+    <!-- Skills Section -->
+    <li>
+      <a href="{{ site.Home.RelPermalink }}#skills" data-section="skills" class="nav-link group relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-neutral-600 dark:text-neutral-400 transition-colors duration-200">
+        <i class="fa-solid fa-lightbulb text-[11px]"></i>
+        <span class="absolute right-12 px-3 py-1.5 text-xs font-normal capitalize text-neutral-800 dark:text-neutral-200 bg-white/95 dark:bg-neutral-900/90 backdrop-blur-sm border border-neutral-200/80 dark:border-neutral-800/80 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md dark:shadow-xl">
+          Skills
+        </span>
+      </a>
+    </li>
+
+    <!-- Projects Section -->
+    <li>
+      <a href="{{ site.Home.RelPermalink }}#projects" data-section="projects" class="nav-link group relative z-10 flex items-center justify-center w-9 h-9 rounded-full text-neutral-600 dark:text-neutral-400 transition-colors duration-200">
+        <i class="fa-solid fa-code text-[11px]"></i>
+        <span class="absolute right-12 px-3 py-1.5 text-xs font-normal capitalize text-neutral-800 dark:text-neutral-200 bg-white/95 dark:bg-neutral-900/90 backdrop-blur-sm border border-neutral-200/80 dark:border-neutral-800/80 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-md dark:shadow-xl">
+          Projects
+        </span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const indicator = document.getElementById('nav-indicator');
+    const container = document.getElementById('nav-container');
+    if (!navLinks.length || !indicator || !container) return;
+
+    const visibleSections = new Set();
+
+    const updateIndicator = () => {
+      // Find all active links in DOM order
+      const activeLinks = navLinks.filter(link => visibleSections.has(link.getAttribute('data-section')));
+
+      if (activeLinks.length === 0) {
+        indicator.classList.add('opacity-0');
+        navLinks.forEach(link => link.classList.remove('text-neutral-950', 'dark:text-white'));
+        return;
+      }
+
+      // Calculate span from first active item to last active item
+      const first = activeLinks[0];
+      const last = activeLinks[activeLinks.length - 1];
+
+      const topPos = first.offsetTop;
+      const height = (last.offsetTop + last.offsetHeight) - topPos;
+
+      // Move indicator
+      indicator.style.top = `${topPos}px`;
+      indicator.style.height = `${height}px`;
+      indicator.classList.remove('opacity-0');
+
+      // Light up text/icons inside the bubble range
+      navLinks.forEach(link => {
+        if (activeLinks.includes(link)) {
+          link.classList.add('text-neutral-950', 'dark:text-white');
+        } else {
+          link.classList.remove('text-neutral-950', 'dark:text-white');
+        }
+      });
+    };
+
+    const sections = [];
+    navLinks.forEach(link => {
+      const el = document.getElementById(link.getAttribute('data-section'));
+      if (el) sections.push(el);
+    });
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          visibleSections.add(entry.target.id);
+        } else {
+          visibleSections.delete(entry.target.id);
+        }
+      });
+      updateIndicator();
+    }, {
+      root: null,
+      rootMargin: '-10% 0px -20% 0px',
+      threshold: 0.15
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+    
+    // Recalculate indicator position on window resize
+    window.addEventListener('resize', updateIndicator);
+  });
+</script>

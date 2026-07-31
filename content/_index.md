@@ -6,7 +6,9 @@ location: "Greater Melbourne Area, Australia"
 linkedin: "https://linkedin.com/in/caleb-webb"
 github: "https://github.com/calebwebb"
 
-summary: "I started as a network engineer, and over the years that turned into a habit of picking up whatever infrastructure needed solving - Cisco security and Zero Trust architectures, identity and access control (dot1x) across hospital, defence and enterprise networks, unified communications platforms (CUCM, UCM, Webex Contact Centre) supporting hundreds of staff, and software-defined data centres built on Cisco ACI as Infrastructure-as-Code. Somewhere along the way, I got tired of doing all of it manually and started automating instead - deploying ACI configurations through CI/CD pipelines, scripting infrastructure validation, and building policy-as-code frameworks. Seven years and four Azure certifications later, I now work as a Cloud DevOps Engineer, but I still think like an infrastructure engineer first: I don't just automate deployments, I automate systems - networking, compute, security, identity, and compliance."
+summary: "I build software-driven cloud platforms on a foundation of enterprise infrastructure expertise. My career started deep in the stack—solving complex network, security, and identity challenges across critical enterprise systems. Realising early on that manual operations don't scale, I turned to automation: replacing static workflows with Python/Go tooling, bringing version-controlled IaC (Terraform & Bicep) to data centres, and engineering CI/CD pipelines that treat infrastructure like software. "
+
+summary2: "Today as a Cloud DevOps Engineer, I apply that same engineering discipline to the public cloud. I write code to build and manage full Azure environments, orchestrating spoke network creation, network security rules, compute platforms, and storage accounts through automated CI/CD pipelines. By embedding Azure Policies and least-privilege identity controls directly into these deployments, I ensure every workload is resilient, compliant, and production-ready by default."
 
 experience:
   - title: "Cloud DevOps Engineer"
