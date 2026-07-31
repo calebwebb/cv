@@ -1,0 +1,68 @@
+# ==============================================================================
+# BASE CONFIGURATION
+# ==============================================================================
+baseURL = 'https://calebw.au/'
+
+title = 'Caleb Webb | Resume & Portfolio'
+languageCode = 'en-us'
+
+# Ensures clean URLs (e.g. /projects/ instead of /projects.html)
+uglyURLs = false
+
+# Enable robots.txt generation for search engines
+enableRobotsTXT = true
+
+
+# ==============================================================================
+# SITE & THEME PARAMETERS
+# ==============================================================================
+[params]
+  description = "DevOps Engineer & Portfolio Resume"
+  author = "Your Name"
+  
+  # Assets (Place these image files inside your /static folder, e.g. static/favicon.ico)
+  favicon = "favicon.ico"
+  avatar = "/static/images/avatar.jpg"
+  
+  # SEO & Social Cards
+  keywords = ["Developer", "Portfolio", "Resume", "Software Development"]
+  images = ["images/og-image.png"] # Shared image when link is posted on social media
+
+# ==============================================================================
+# NAVIGATION MENU
+# ==============================================================================
+# Anchor links match NightFolio's modular home page sections in content/_index.md
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/#summary"
+    weight = 10
+
+  [[menu.main]]
+    name = "Experience"
+    url = "/#experience"
+    weight = 20
+
+  [[menu.main]]
+    name = "Education"
+    url = "/#education"
+    weight = 30
+
+  [[menu.main]]
+    name = "Skills"
+    url = "/#skills"
+    weight = 40
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/#projects"
+    weight = 50
+
+
+# ==============================================================================
+# MARKDOWN & BUILD SETTINGS
+# ==============================================================================
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Allows raw HTML inside Markdown files if needed
