@@ -37,11 +37,11 @@
         display: none !important;
     }
     body {
-        background: white !important;
+        background: #fbf9f5 !important;
         color: black !important;
     }
     .dark-card {
-        background: white !important;
+        background: #fbf9f5 !important;
         color: black !important;
         border-color: #e2e8f0 !important;
     }

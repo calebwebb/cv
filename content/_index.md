@@ -3,6 +3,7 @@ title: "Caleb Webb - Cloud DevOps Engineer"
 name: "Caleb Webb"
 position: "Cloud DevOps Engineer"
 location: "Greater Melbourne Area, Australia"
+email: "me@calebw.au"
 linkedin: "https://linkedin.com/in/caleb-webb"
 github: "https://github.com/calebwebb"
 
