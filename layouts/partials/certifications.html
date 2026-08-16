@@ -10,7 +10,9 @@
         <h3 class="font-medium text-sm dark:text-white">{{ .name }}</h3>
         <span class="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap ml-2">{{ .year }}</span>
       </div>
-      <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">{{ .issuer }}</p>
+      <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">
+        {{ .issuer }}{{ with .credentialURL }} - <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Verify Credential</a>{{ end }}
+      </p>
     </div>
     {{ end }}
   </div>

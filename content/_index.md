@@ -75,9 +75,9 @@ education:
 
 skills:
   - category: "Cloud Platforms"
-    items: ["Azure", "Entra ID", "Bicep"]
+    items: ["Azure", "Entra ID", "M365"]
   - category: "Infrastructure as Code"
-    items: ["Terraform", "Policy-as-Code", "Ansible"]
+    items: ["Terraform", "Bicep", "Ansible"]
   - category: "CI/CD & Git"
     items: ["Azure DevOps", "GitLab", "Jenkins"]
   - category: "Scripting & Automation"
@@ -92,33 +92,43 @@ certifications:
   - name: "Cisco Certified Networking Professional, Security"
     issuer: "Cisco"
     year: "2026"
+    credentialURL: "https://www.credly.com/badges/4c789473-2d61-40df-a18d-c01e29b91364/"
   - name: "Cisco Certified Specialist - Network Security VPN"
     issuer: "Cisco"
     year: "2026"
+    credentialURL: "https://www.credly.com/badges/8be97742-5d9e-4716-bd1d-04bc4ed8af03"
   - name: "Cisco Certified Specialist - Security Core"
     issuer: "Cisco"
     year: "2024"
+    credentialURL: "https://www.credly.com/badges/10361f55-ce8c-4cd3-93c1-94df97a0e844"
   - name: "Cisco Certified Network Associate"
     issuer: "Cisco"
     year: "2022"
+    credentialURL: "https://www.credly.com/badges/ea457d23-aaa6-41f8-8469-dce05e915c09"
   - name: "ECSE Design"
     issuer: "Ekahau"
     year: "2022"
+    credentialURL: "https://www.credly.com/badges/17776335-5817-4fe0-bdd1-d5959ddebd4c"
   - name: "Azure DevOps Engineer Expert"
     issuer: "Microsoft"
     year: "2026"
+    credentialURL: "https://learn.microsoft.com/en-us/users/calebwebb/credentials/3d0ce968c69eb239"
   - name: "Azure Solutions Architect Expert"
     issuer: "Microsoft"
     year: "2026"
+    credentialURL: "https://learn.microsoft.com/en-us/users/calebwebb/credentials/86e3452e02df00e5"
   - name: "Azure Developer Associate"
     issuer: "Microsoft"
     year: "2026"
+    credentialURL: "https://learn.microsoft.com/en-us/users/calebwebb/credentials/e6183fc8084d6f76"
   - name: "Azure Network Engineer Associate"
     issuer: "Microsoft"
     year: "2025"
+    credentialURL: "https://learn.microsoft.com/en-us/users/calebwebb/credentials/a253b4f9ae228dad"
   - name: "Azure Administrator Associate"
     issuer: "Microsoft"
     year: "2026"
+    credentialURL: "https://learn.microsoft.com/en-us/users/calebwebb/credentials/3e123cb6ad7e2fab"
 
 projects:
   - title: "Automation Suite - $430k Saved"
