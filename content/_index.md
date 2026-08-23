@@ -7,7 +7,7 @@ email: "me@calebw.au"
 linkedin: "https://linkedin.com/in/caleb-webb"
 github: "https://github.com/calebwebb"
 
-summary: "I build software-driven cloud platforms on a foundation of enterprise infrastructure expertise. My career started deep in the stack—solving complex network, security, and identity challenges across critical enterprise systems. Realising early on that manual operations don't scale, I turned to automation: replacing static workflows with Python/Go tooling, bringing version-controlled IaC (Terraform & Bicep) to data centres, and engineering CI/CD pipelines that treat infrastructure like software. "
+summary: "I build software-driven cloud platforms on a foundation of enterprise infrastructure expertise. My career started deep in the stack, solving complex network, security, and identity challenges across critical enterprise systems. Realising early on that manual operations don't scale, I turned to automation: replacing static workflows with Python/Go tooling, bringing version-controlled IaC (Terraform & Bicep) to data centres, and engineering CI/CD pipelines that treat infrastructure like software. "
 
 summary2: "Today as a Cloud DevOps Engineer, I apply that same engineering discipline to the public cloud. I write code to build and manage full Azure environments, orchestrating spoke network creation, network security rules, compute platforms, and storage accounts through automated CI/CD pipelines. By embedding Azure Policies and least-privilege identity controls directly into these deployments, I ensure every workload is resilient, compliant, and production-ready by default."
 
@@ -74,18 +74,64 @@ education:
     period: "2019 - 2023"
 
 skills:
-  - category: "Cloud Platforms"
-    items: ["Azure", "Entra ID", "M365"]
-  - category: "Infrastructure as Code"
-    items: ["Terraform", "Bicep", "Ansible"]
-  - category: "CI/CD & Git"
-    items: ["Azure DevOps", "GitLab", "Jenkins"]
-  - category: "Scripting & Automation"
-    items: ["Python", "PowerShell", "Go", "Neovim"]
-  - category: "Security & Identity"
-    items: ["Firewalls", "Dot1x", "RADIUS", "ZTNA"]
-  - category: "Monitoring & Observability"
-    items: ["Zabbix", "Dynatrace", "Grafana"]
+- category: "DevOps & Platform Engineering"
+  items:
+    - "Infrastructure as Code (Terraform, Bicep, ARM)"
+    - "Multi-Stage Pipeline Automation & Release Management"
+    - "GitLab, Azure DevOps & Jenkins CI/CD Workflows"
+    - "Policy-as-Code, Guardrails & Security Validation"
+    - "Stateful Environment Provisioning & Orchestration"
+    - "High-Availability Application & Cluster Rollouts"
+- category: "Automation & Software Tooling"
+  items:
+    - "Python, Go, PowerShell, Ansible & Bash"
+    - "Custom PowerShell & WPF Desktop Applications"
+    - "Flask Web Portals & Self-Service L3 APIs"
+    - "RESTful API Integration & Network Automation"
+    - "Systems Scripting & Custom Telemetry Suites"
+    - "UC Self-Service Provisioning & Contact Centre DR"
+- category: "Cloud Architecture & Infrastructure"
+  items:
+    - "Platform Architecture & Administration"
+    - "Advanced Cloud Networking & Peering"
+    - "Hybrid Connectivity & ExpressRoute"
+    - "High Availability & Disaster Recovery"
+    - "Resilient Cloud Design & BCDR"
+    - "Cloud-Native Application Integration"
+    - "Identity Governance & Service Principals"
+    - "Enterprise Data Centre Migration"
+- category: "Advanced Network Engineering"
+  items:
+    - "Enterprise Routing & Switching"
+    - "OSPF, BGP, IPv4 & IPv6 Protocols"
+    - "High-Availability Topologies & Design"
+    - "Path Redundancy & Failover Mechanics"
+    - "Campus Network Refreshes & Lifecycle"
+    - "Zero-Touch Provisioning (ZTP)"
+    - "Software-Defined Data Centre (SDDC)"
+    - "F5 L4/7 Load Balancing & APM"
+- category: "Network Security & Wireless"
+  items:
+    - "Zero Trust Network Access (802.1X)"
+    - "Cisco ISE & RADIUS Architecture"
+    - "Next-Gen Firewalls & Palo Alto"
+    - "Cloud NSGs, ASGs & Segmentation"
+    - "IPsec & Site-to-Site VPN Design"
+    - "Remote Access SSL/TLS VPNs"
+    - "Enterprise Wireless Network Design"
+    - "Predictive Site Surveys & Ekahau"
+    - "ISO 27001 Compliance Standards"
+- category: "Leadership & Reliability"
+  items:
+    - "Technical Engineering Leadership"
+    - "Cross-Functional Team Management"
+    - "Incident Management & RCA"
+    - "Infrastructure Reliability Ops"
+    - "Enterprise Monitoring (Grafana, Dyntrace)"
+    - "Telemetry Standards & Logging (Prometheus, Loki)"
+    - "FinOps & Cloud Cost Optimisation"
+    - "Licensing Governance & Auditing"
+    - "Software Engineering & Version Control"
 
 # Remaining sections are optional.
 certifications:

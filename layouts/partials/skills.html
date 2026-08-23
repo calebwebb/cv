@@ -1,11 +1,17 @@
 <section id="skills" class="mb-8 scroll-mt-5">
     <h2 class="text-xl font-semibold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">Technical Skills</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
       {{ range .Params.skills }}
-      <div class="bg-white dark:bg-gray-800 dark:border-gray-700 border rounded p-3">
-        <h4 class="font-medium mb-1 dark:text-white">{{ .category }}</h4>
-        <p class="text-gray-700 dark:text-gray-300">{{ delimit .items ", " }}</p>
+      <div class="bg-white dark:bg-gray-800 dark:border-gray-700 border rounded-lg p-4 flex flex-col justify-between shadow-sm">
+        <div>
+          <h4 class="font-semibold text-base mb-2 text-gray-900 dark:text-white">{{ .category }}</h4>
+          <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+            {{ range .items }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
       </div>
       {{ end }}
     </div>
-  </section>
+</section>
