@@ -103,7 +103,7 @@ skills:
 - category: "Advanced Network Engineering"
   items:
     - "Enterprise Routing & Switching"
-    - "OSPF, BGP, IPv4 & IPv6 Protocols"
+    - "OSPF, BGP, EIGRP, VXLAN, IPv4 Protocols"
     - "High-Availability Topologies & Design"
     - "Path Redundancy & Failover Mechanics"
     - "Campus Network Refreshes & Lifecycle"
