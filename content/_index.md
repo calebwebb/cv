@@ -45,7 +45,7 @@ experience:
       - Architected enterprise-wide Zero Trust NAC (802.1X) using Cisco ISE for secure endpoint identity - the same access-control principles now applied at the cloud IAM layer.
       - Designed and deployed a full monitoring ecosystem on Zabbix, and optimised F5 controllers for L4/7 load balancing, APM, and SSL offload.
       - Owned incident management and root-cause analysis across Security, Data Centre, and Automation platforms.
-      
+
   - title: "Network Engineer"
     company: "Monash Health"
     location: "Clayton, VIC"
@@ -127,7 +127,7 @@ skills:
     - "Cross-Functional Team Management"
     - "Incident Management & RCA"
     - "Infrastructure Reliability Ops"
-    - "Enterprise Monitoring (Grafana, Dyntrace)"
+    - "Enterprise Monitoring (Grafana, Dynatrace)"
     - "Telemetry Standards & Logging (Prometheus, Loki)"
     - "FinOps & Cloud Cost Optimisation"
     - "Licensing Governance & Auditing"
